@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { resolvePlatformRouteUrl } from "@/uni_modules/uni-routealias";
+import { resolvePlatformRouteUrl } from "uni-routealias";
 
 type ShellTone = "cyan" | "emerald" | "amber";
 

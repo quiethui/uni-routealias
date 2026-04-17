@@ -1,0 +1,68 @@
+{
+  "name": "uni-routealias",
+  "version": "1.0.0",
+  "description": "为 uni-app Vue3 + Vite 提供 pages.json 路由别名、公开路径转换与 H5 地址栏 alias 注入。",
+  "type": "module",
+  "license": "MIT",
+  "author": "quiethui",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./vite": {
+      "types": "./dist/vite.d.ts",
+      "import": "./dist/vite.js",
+      "require": "./vite.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "vite.cjs"
+  ],
+  "scripts": {
+    "build": "tsc -p ./tsconfig.build.json && node ./scripts/postbuild.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "uni-app",
+    "route-alias",
+    "pages.json",
+    "vite",
+    "h5"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quiethui/uni-routealias.git"
+  },
+  "bugs": {
+    "url": "https://github.com/quiethui/uni-routealias/issues"
+  },
+  "homepage": "https://github.com/quiethui/uni-routealias#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@dcloudio/uni-shared": ">=3.0.0-0 <4"
+  },
+  "peerDependencies": {
+    "@dcloudio/uni-app": ">=3.0.0-0 <4",
+    "vite": "^5.0.0 || ^6.0.0"
+  },
+  "devDependencies": {
+    "@dcloudio/types": "^3.4.8",
+    "@types/node": "^20.17.0",
+    "typescript": "^4.9.4",
+    "vite": "^5.2.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

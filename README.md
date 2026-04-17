@@ -2,6 +2,8 @@
 
 这是一个可直接运行的 `uni-app Vue3 + Vite` 示例工程，用来演示 `uni-routealias` 插件在真实项目里的使用方式。
 
+根目录的 `plugin/uni-routealias` 是待发布的 npm 包，示例工程通过本地 `file:` 依赖以 npm 方式消费它。
+
 ## 这个示例包含什么
 
 - 带 `/pages/...` 的原始路由示例
@@ -26,7 +28,8 @@ src/
   components/
   composables/
   utils/
-  uni_modules/uni-routealias/
+plugin/
+  uni-routealias/
 ```
 
 ## 运行方式

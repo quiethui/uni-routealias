@@ -4,7 +4,7 @@ import {
   getRoutePublicPaths,
   resolvePlatformRouteUrl,
   resolvePublicRouteUrl,
-} from "@/uni_modules/uni-routealias";
+} from "uni-routealias";
 import {
   appendQuery,
   formatQueryRecord,

@@ -4,7 +4,7 @@ import {
   resolveActualRouteUrl,
   resolvePlatformRouteUrl,
   resolvePublicRouteUrl,
-} from "@/uni_modules/uni-routealias";
+} from "uni-routealias";
 
 export type DemoTone = "cyan" | "emerald" | "amber";
 export type DemoOpenType = "navigateTo" | "redirectTo" | "reLaunch" | "switchTab";

@@ -1,6 +1,6 @@
 import { ref } from "vue";
 import { onShow } from "@dcloudio/uni-app";
-import { resolvePlatformRouteUrl, resolvePublicRouteUrl } from "@/uni_modules/uni-routealias";
+import { resolvePlatformRouteUrl, resolvePublicRouteUrl } from "uni-routealias";
 import {
   getCurrentPageSnapshot,
   type DemoOpenType,

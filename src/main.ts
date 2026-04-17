@@ -1,6 +1,6 @@
 import App from "./App.vue";
 import { createSSRApp } from "vue";
-import { installRouteAliasPlugin } from "@/uni_modules/uni-routealias";
+import { installRouteAliasPlugin } from "uni-routealias";
 
 installRouteAliasPlugin();
 

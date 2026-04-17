@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./dist",
+    "noEmit": false,
+    "sourceMap": false,
+    "declaration": true,
+    "declarationMap": false,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "target": "ES2019",
+    "lib": ["ESNext", "DOM"],
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["node"]
+  },
+  "include": ["./**/*.ts", "./**/*.d.ts"],
+  "exclude": ["./dist", "./scripts"]
+}
