@@ -1,0 +1,121 @@
+{
+  "name": "uni-routealias",
+  "id": "uni-routealias",
+  "displayName": "uni-app 路由别名",
+  "version": "1.0.0",
+  "description": "为 uni-app Vue3 + Vite 提供 pages.json 路由别名、公开路径转换与 H5 地址栏 alias 注入。",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./vite": {
+      "types": "./dist/vite.d.ts",
+      "import": "./dist/vite.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quiethui/uni-routealias.git"
+  },
+  "bugs": {
+    "url": "https://github.com/quiethui/uni-routealias/issues"
+  },
+  "homepage": "https://github.com/quiethui/uni-routealias#readme",
+  "author": "quiethui",
+  "scripts": {
+    "build": "tsc -p ./tsconfig.build.json && node ./scripts/postbuild.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "uni-app",
+    "uni_modules",
+    "route alias",
+    "public path",
+    "vite",
+    "路由别名"
+  ],
+  "engines": {
+    "HBuilderX": "^4.71.0",
+    "uni-app": "^3.0.0"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "index.ts",
+    "vite.ts",
+    "route-alias-state.ts",
+    "core",
+    "readme.md",
+    "changelog.md",
+    "package.json"
+  ],
+  "dcloudext": {
+    "category": [
+      "JS SDK",
+      "通用 SDK"
+    ],
+    "type": "sdk-js",
+    "contact": {
+      "qq": ""
+    },
+    "declaration": {
+      "ads": "无",
+      "data": "插件不采集任何数据",
+      "permissions": "无"
+    }
+  },
+  "uni_modules": {
+    "dependencies": [],
+    "platforms": {
+      "client": {
+        "uni-app": {
+          "vue": {
+            "vue2": "x",
+            "vue3": "√"
+          },
+          "web": {
+            "chrome": "√",
+            "safari": "-"
+          },
+          "app": {
+            "vue": "-",
+            "nvue": "x",
+            "android": "-",
+            "ios": "-",
+            "harmony": "-"
+          },
+          "mp": {
+            "weixin": "√",
+            "alipay": "-",
+            "toutiao": "-",
+            "baidu": "-",
+            "kuaishou": "-",
+            "qq": "-",
+            "lark": "-",
+            "jd": "-",
+            "xhs": "-"
+          }
+        },
+        "uni-app-x": {
+          "uvue": "x",
+          "web": {
+            "chrome": "x",
+            "safari": "x"
+          },
+          "app": {
+            "android": "x",
+            "ios": "x",
+            "harmony": "x"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "pages": [
+    {
+      "path": "pages/home/index",
+      "style": {
+        "navigationBarTitleText": "uni-routealias Demo"
+      }
+    },
+    {
+      "path": "pages/observatory/index",
+      "routeAlias": "/observatory",
+      "style": {
+        "navigationBarTitleText": "Observatory"
+      }
+    },
+    {
+      "path": "pages/routes/playground/index",
+      "style": {
+        "navigationBarTitleText": "Playground"
+      }
+    },
+    {
+      "path": "pages/signal/index",
+      "routeAlias": "/signal",
+      "style": {
+        "navigationBarTitleText": "Signal"
+      }
+    },
+    {
+      "path": "pages/article/detail",
+      "routeAlias": "/pulse",
+      "style": {
+        "navigationBarTitleText": "Pulse"
+      }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "packages/showcase",
+      "pages": [
+        {
+          "path": "campaign/index",
+          "routeAlias": "/campaign",
+          "style": {
+            "navigationBarTitleText": "Campaign"
+          }
+        }
+      ]
+    }
+  ],
+  "globalStyle": {
+    "navigationStyle": "custom",
+    "backgroundColor": "#f5f7fb",
+    "backgroundColorTop": "#f5f7fb",
+    "backgroundColorBottom": "#f5f7fb"
+  },
+  "tabBar": {
+    "color": "#7E93B3",
+    "selectedColor": "#4D80F0",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "Home",
+        "iconPath": "static/tabbar/home.svg",
+        "selectedIconPath": "static/tabbar/home-active.svg"
+      },
+      {
+        "pagePath": "pages/signal/index",
+        "text": "Signal",
+        "iconPath": "static/tabbar/signal.svg",
+        "selectedIconPath": "static/tabbar/signal-active.svg"
+      },
+      {
+        "pagePath": "pages/observatory/index",
+        "text": "Scope",
+        "iconPath": "static/tabbar/observatory.svg",
+        "selectedIconPath": "static/tabbar/observatory-active.svg"
+      }
+    ]
+  }
+}

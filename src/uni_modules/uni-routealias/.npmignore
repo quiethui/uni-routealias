@@ -1,0 +1,10 @@
+core/
+scripts/
+dist/
+!dist/
+!dist/**
+index.ts
+vite.ts
+route-alias-state.ts
+tsconfig.build.json
+*.tgz
