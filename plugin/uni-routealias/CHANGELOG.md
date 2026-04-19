@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0
+## 1.0.1
 
 - 初始化 `uni-routealias` 的 npm 发布结构。
 - 支持构建期读取 `pages.json`，生成真实路径、默认 alias、自定义 alias 映射。

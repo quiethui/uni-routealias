@@ -1,17 +1,9 @@
-<script setup lang="ts">
-import { onHide, onLaunch, onShow } from "@dcloudio/uni-app";
-
-onLaunch(() => {
-  console.log("uni-routealias demo launch");
-});
-
-onShow(() => {
-  console.log("uni-routealias demo show");
-});
-
-onHide(() => {
-  console.log("uni-routealias demo hide");
-});
+<script lang="ts">
+export default {
+  onLaunch() {},
+  onShow() {},
+  onHide() {},
+};
 </script>
 
 <style>
@@ -30,148 +22,82 @@ button::after {
 
 page {
   min-height: 100%;
-  color: #24324a;
-  background: #f5f7fb;
+  color: #1f2937;
+  background: #f6f7fb;
   font-family: "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", sans-serif;
 }
 
-page::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(180deg, rgba(93, 129, 255, 0.06) 0%, rgba(93, 129, 255, 0) 18%),
-    linear-gradient(180deg, #f8faff 0%, #f5f7fb 100%);
-}
-
-:root,
-page {
-  --demo-bg: #f5f7fb;
-  --demo-panel: #ffffff;
-  --demo-panel-soft: #f7f9fd;
-  --demo-line: #e8edf5;
-  --demo-line-strong: rgba(93, 129, 255, 0.18);
-  --demo-text: #24324a;
-  --demo-muted: #7b879d;
-  --demo-cyan: #4d80f0;
-  --demo-emerald: #2db983;
-  --demo-amber: #f59f45;
-  --demo-radius: 24rpx;
-  --demo-radius-sm: 16rpx;
-  --demo-shadow: 0 12rpx 36rpx rgba(31, 45, 61, 0.06);
-  --demo-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
-}
-
-.demo-page {
-  position: relative;
+.page-wrap {
   min-height: 100vh;
+  padding: 32rpx;
 }
 
-.demo-chip {
-  display: inline-flex;
-  align-items: center;
-  min-height: 42rpx;
-  padding: 0 16rpx;
-  border-radius: 999rpx;
-  border: 1px solid rgba(77, 128, 240, 0.1);
-  background: rgba(77, 128, 240, 0.08);
-  color: var(--demo-muted);
-  font-size: 21rpx;
-  line-height: 1;
+.hero-card,
+.section-card {
+  padding: 32rpx;
+  border-radius: 24rpx;
+  background: #ffffff;
+  box-shadow: 0 12rpx 36rpx rgba(15, 23, 42, 0.06);
 }
 
-.demo-code {
-  display: block;
-  width: 100%;
-  padding: 16rpx 18rpx;
-  border-radius: 16rpx;
-  background: var(--demo-panel-soft);
-  border: 1px solid var(--demo-line);
-  color: #41506a;
+.hero-card {
+  display: grid;
+  gap: 16rpx;
+}
+
+.section-card {
+  display: grid;
+  gap: 20rpx;
+  margin-top: 24rpx;
+}
+
+.hero-label {
+  color: #4d80f0;
   font-size: 22rpx;
-  line-height: 1.65;
-  font-family: var(--demo-mono);
-  word-break: break-all;
-  white-space: pre-wrap;
-}
-
-.demo-kv-list {
-  display: grid;
-  gap: 12rpx;
-}
-
-.demo-kv-item {
-  display: grid;
-  gap: 6rpx;
-  padding: 14rpx 0;
-  border-bottom: 1px solid var(--demo-line);
-}
-
-.demo-kv-item:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-
-.demo-kv-item:first-child {
-  padding-top: 0;
-}
-
-.demo-kv-label {
-  color: #9aa6bc;
-  font-size: 20rpx;
-}
-
-.demo-kv-value {
-  color: var(--demo-text);
-  font-size: 24rpx;
-  line-height: 1.62;
-  font-family: var(--demo-mono);
-  word-break: break-all;
-}
-
-.demo-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 68rpx;
-  padding: 0 24rpx;
-  border-radius: 999rpx;
-  font-size: 24rpx;
   font-weight: 600;
 }
 
-.demo-button:active {
-  opacity: 0.92;
+.hero-title {
+  color: #111827;
+  font-size: 44rpx;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
-.demo-button--primary {
-  background: #4d80f0;
-  border: 1px solid #4d80f0;
-  color: #ffffff;
+.hero-desc,
+.alias-item {
+  color: #4b5563;
+  font-size: 26rpx;
+  line-height: 1.7;
 }
 
-.demo-button--ghost {
-  background: #ffffff;
-  border: 1px solid var(--demo-line);
-  color: var(--demo-text);
+.section-title {
+  color: #111827;
+  font-size: 30rpx;
+  font-weight: 600;
 }
 
-.demo-button--amber {
-  background: rgba(245, 159, 69, 0.12);
-  border: 1px solid rgba(245, 159, 69, 0.18);
-  color: #b96817;
+.alias-list,
+.nav-list {
+  display: grid;
+  gap: 16rpx;
 }
 
-.demo-button--emerald {
-  background: rgba(45, 185, 131, 0.12);
-  border: 1px solid rgba(45, 185, 131, 0.16);
-  color: #18845c;
-}
-
-.demo-button-row {
+.nav-button {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12rpx;
+  align-items: center;
+  justify-content: center;
+  min-height: 88rpx;
+  border: 1px solid #d7dce5;
+  border-radius: 16rpx;
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 28rpx;
+}
+
+.primary-button {
+  border-color: #4d80f0;
+  background: #4d80f0;
+  color: #ffffff;
 }
 </style>

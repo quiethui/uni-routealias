@@ -14,8 +14,8 @@ function resolveDefaultPagesJsonPath() {
   return candidates.find((candidatePath) => fs.existsSync(candidatePath)) || candidates[0];
 }
 
-async function createRouteAliasStateFromFile(pagesJsonPath) {
-  const rawContent = fs.readFileSync(pagesJsonPath, "utf8");
+async function createRouteAliasStateFromFile(resolvedPagesJsonPath) {
+  const rawContent = fs.readFileSync(resolvedPagesJsonPath, "utf8");
   const routeAliasStateModule = await import("./dist/route-alias-state.js");
   return routeAliasStateModule.createRouteAliasState(
     routeAliasStateModule.parsePagesJsonText(rawContent)
@@ -23,6 +23,8 @@ async function createRouteAliasStateFromFile(pagesJsonPath) {
 }
 
 function createRouteAliasVitePlugin(pagesJsonPath = resolveDefaultPagesJsonPath()) {
+  const resolvedPagesJsonPath = path.resolve(process.cwd(), pagesJsonPath);
+
   return {
     name: "route-alias-config",
     enforce: "pre",
@@ -46,14 +48,14 @@ function createRouteAliasVitePlugin(pagesJsonPath = resolveDefaultPagesJsonPath(
         return;
       }
 
-      this.addWatchFile(pagesJsonPath);
+      this.addWatchFile(resolvedPagesJsonPath);
 
       let routeAliasState;
       try {
-        routeAliasState = await createRouteAliasStateFromFile(pagesJsonPath);
+        routeAliasState = await createRouteAliasStateFromFile(resolvedPagesJsonPath);
       } catch (error) {
         const message = error instanceof Error ? error.message : String(error);
-        this.error(`uni-routealias: failed to read "${pagesJsonPath}". ${message}`);
+        this.error(`uni-routealias: failed to read "${resolvedPagesJsonPath}". ${message}`);
       }
 
       routeAliasState.warnings.forEach((message) => {
@@ -63,7 +65,7 @@ function createRouteAliasVitePlugin(pagesJsonPath = resolveDefaultPagesJsonPath(
       return `export default ${JSON.stringify(routeAliasState.config)}`;
     },
     handleHotUpdate({ file, server }) {
-      if (path.resolve(file) !== path.resolve(pagesJsonPath)) {
+      if (path.resolve(file) !== path.resolve(resolvedPagesJsonPath)) {
         return;
       }
 

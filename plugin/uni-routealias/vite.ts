@@ -16,18 +16,20 @@ function resolveDefaultPagesJsonPath() {
   return candidates.find((candidatePath) => fs.existsSync(candidatePath)) || candidates[0];
 }
 
-function parsePagesJson(pagesJsonPath: string) {
-  const rawContent = fs.readFileSync(pagesJsonPath, "utf8");
+function parsePagesJson(resolvedPagesJsonPath: string) {
+  const rawContent = fs.readFileSync(resolvedPagesJsonPath, "utf8");
   return parsePagesJsonText(rawContent);
 }
 
-function createRouteAliasStateFromFile(pagesJsonPath: string): RouteAliasState {
-  return createRouteAliasState(parsePagesJson(pagesJsonPath));
+function createRouteAliasStateFromFile(resolvedPagesJsonPath: string): RouteAliasState {
+  return createRouteAliasState(parsePagesJson(resolvedPagesJsonPath));
 }
 
 export function createRouteAliasVitePlugin(
   pagesJsonPath = resolveDefaultPagesJsonPath()
 ): Plugin {
+  const resolvedPagesJsonPath = path.resolve(process.cwd(), pagesJsonPath);
+
   return {
     name: "route-alias-config",
     enforce: "pre",
@@ -51,14 +53,14 @@ export function createRouteAliasVitePlugin(
         return;
       }
 
-      this.addWatchFile(pagesJsonPath);
+      this.addWatchFile(resolvedPagesJsonPath);
 
       let routeAliasState: RouteAliasState;
       try {
-        routeAliasState = createRouteAliasStateFromFile(pagesJsonPath);
+        routeAliasState = createRouteAliasStateFromFile(resolvedPagesJsonPath);
       } catch (error) {
         const message = error instanceof Error ? error.message : String(error);
-        this.error(`uni-routealias: failed to read "${pagesJsonPath}". ${message}`);
+        this.error(`uni-routealias: failed to read "${resolvedPagesJsonPath}". ${message}`);
       }
 
       routeAliasState.warnings.forEach((message) => {
@@ -68,7 +70,7 @@ export function createRouteAliasVitePlugin(
       return `export default ${JSON.stringify(routeAliasState.config)}`;
     },
     handleHotUpdate({ file, server }) {
-      if (path.resolve(file) !== path.resolve(pagesJsonPath)) {
+      if (path.resolve(file) !== path.resolve(resolvedPagesJsonPath)) {
         return;
       }
 

@@ -2,82 +2,49 @@
   "pages": [
     {
       "path": "pages/home/index",
+      "routeAlias": "/home",
       "style": {
-        "navigationBarTitleText": "uni-routealias Demo"
+        "navigationBarTitleText": "首页"
       }
     },
     {
-      "path": "pages/observatory/index",
-      "routeAlias": "/observatory",
+      "path": "pages/with-pages/index",
       "style": {
-        "navigationBarTitleText": "Observatory"
+        "navigationBarTitleText": "带 /pages 示例"
       }
     },
     {
-      "path": "pages/routes/playground/index",
+      "path": "pages/default-alias/index",
       "style": {
-        "navigationBarTitleText": "Playground"
+        "navigationBarTitleText": "默认 alias 示例"
       }
     },
     {
-      "path": "pages/signal/index",
-      "routeAlias": "/signal",
+      "path": "pages/custom/index",
+      "routeAlias": "/custom-entry",
       "style": {
-        "navigationBarTitleText": "Signal"
-      }
-    },
-    {
-      "path": "pages/article/detail",
-      "routeAlias": "/pulse",
-      "style": {
-        "navigationBarTitleText": "Pulse"
+        "navigationBarTitleText": "自定义 alias 示例"
       }
     }
   ],
   "subPackages": [
     {
-      "root": "packages/showcase",
+      "root": "packages/demo",
       "pages": [
         {
-          "path": "campaign/index",
-          "routeAlias": "/campaign",
+          "path": "subpage/index",
+          "routeAlias": "/subpackage-entry",
           "style": {
-            "navigationBarTitleText": "Campaign"
+            "navigationBarTitleText": "分包 alias 示例"
           }
         }
       ]
     }
   ],
   "globalStyle": {
-    "navigationStyle": "custom",
-    "backgroundColor": "#f5f7fb",
-    "backgroundColorTop": "#f5f7fb",
-    "backgroundColorBottom": "#f5f7fb"
-  },
-  "tabBar": {
-    "color": "#7E93B3",
-    "selectedColor": "#4D80F0",
-    "backgroundColor": "#ffffff",
-    "borderStyle": "black",
-    "list": [
-      {
-        "pagePath": "pages/home/index",
-        "text": "Home",
-        "iconPath": "static/tabbar/home.svg",
-        "selectedIconPath": "static/tabbar/home-active.svg"
-      },
-      {
-        "pagePath": "pages/signal/index",
-        "text": "Signal",
-        "iconPath": "static/tabbar/signal.svg",
-        "selectedIconPath": "static/tabbar/signal-active.svg"
-      },
-      {
-        "pagePath": "pages/observatory/index",
-        "text": "Scope",
-        "iconPath": "static/tabbar/observatory.svg",
-        "selectedIconPath": "static/tabbar/observatory-active.svg"
-      }
-    ]
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-routealias 示例",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f6f7fb"
   }
 }

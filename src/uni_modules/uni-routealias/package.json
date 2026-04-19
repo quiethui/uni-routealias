@@ -2,7 +2,7 @@
   "name": "uni-routealias",
   "id": "uni-routealias",
   "displayName": "uni-app 路由别名",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "为 uni-app Vue3 + Vite 提供 pages.json 路由别名、公开路径转换与 H5 地址栏 alias 注入。",
   "type": "module",
   "license": "MIT",
@@ -31,6 +31,7 @@
   "author": "quiethui",
   "scripts": {
     "build": "tsc -p ./tsconfig.build.json && node ./scripts/postbuild.mjs",
+    "prepare": "npm run build",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
