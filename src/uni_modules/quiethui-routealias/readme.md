@@ -1,6 +1,6 @@
-# uni-routealias
+# quiethui-routealias
 
-`uni-routealias` 是一个面向 `uni-app Vue3 + Vite` 的轻量插件，用来为 `pages.json` 中的页面配置更简洁、更稳定的公开路径。
+`quiethui-routealias` 是一个面向 `uni-app Vue3 + Vite` 的轻量插件，用来为 `pages.json` 中的页面配置更简洁、更稳定的公开路径。
 
 它适合这类场景：
 
@@ -48,7 +48,7 @@
 
 ```text
 uni_modules/
-  uni-routealias/
+  quiethui-routealias/
 ```
 
 项目源码统一放在 `src` 时：
@@ -56,7 +56,7 @@ uni_modules/
 ```text
 src/
   uni_modules/
-    uni-routealias/
+    quiethui-routealias/
 ```
 
 ### 2. 在 `vite.config.ts` 注册构建插件
@@ -66,7 +66,7 @@ src/
 ```ts
 import { defineConfig } from "vite";
 import uni from "@dcloudio/vite-plugin-uni";
-import { createRouteAliasVitePlugin } from "./src/uni_modules/uni-routealias/vite";
+import { createRouteAliasVitePlugin } from "./src/uni_modules/quiethui-routealias/vite";
 
 export default defineConfig({
   plugins: [createRouteAliasVitePlugin(), uni()],
@@ -78,7 +78,7 @@ export default defineConfig({
 ```ts
 import { defineConfig } from "vite";
 import uni from "@dcloudio/vite-plugin-uni";
-import { createRouteAliasVitePlugin } from "./uni_modules/uni-routealias/vite";
+import { createRouteAliasVitePlugin } from "./uni_modules/quiethui-routealias/vite";
 
 export default defineConfig({
   plugins: [createRouteAliasVitePlugin(), uni()],
@@ -90,7 +90,7 @@ export default defineConfig({
 ```ts
 import App from "./App.vue";
 import { createSSRApp } from "vue";
-import { installRouteAliasPlugin } from "@/uni_modules/uni-routealias";
+import { installRouteAliasPlugin } from "@/uni_modules/quiethui-routealias";
 
 installRouteAliasPlugin();
 
@@ -137,7 +137,7 @@ export function createApp() {
 ### 5. 统一通过公开路径跳转
 
 ```ts
-import { resolvePlatformRouteUrl } from "@/uni_modules/uni-routealias";
+import { resolvePlatformRouteUrl } from "@/uni_modules/quiethui-routealias";
 
 uni.navigateTo({
   url: resolvePlatformRouteUrl("/post?id=9527&tab=comments"),
@@ -145,7 +145,7 @@ uni.navigateTo({
 ```
 
 ```ts
-import { resolvePlatformRouteUrl } from "@/uni_modules/uni-routealias";
+import { resolvePlatformRouteUrl } from "@/uni_modules/quiethui-routealias";
 
 uni.switchTab({
   url: resolvePlatformRouteUrl("/mine"),
@@ -153,7 +153,7 @@ uni.switchTab({
 ```
 
 ```ts
-import { resolvePublicRouteUrl } from "@/uni_modules/uni-routealias";
+import { resolvePublicRouteUrl } from "@/uni_modules/quiethui-routealias";
 
 const shareUrl = resolvePublicRouteUrl("/pages/article/detail?id=9527");
 // => /post?id=9527

@@ -27,6 +27,54 @@ page {
   font-family: "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", sans-serif;
 }
 
+@media screen and (min-width: 768px) {
+  html,
+  body {
+    background: #e9edf5;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  #app::-webkit-scrollbar,
+  uni-page-body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
+  #app {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    margin: 0 auto;
+    overflow-x: hidden;
+    background: #f6f7fb;
+    box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.06),
+      0 24px 80px rgba(15, 23, 42, 0.16);
+  }
+
+  uni-app,
+  uni-page,
+  uni-page-wrapper,
+  uni-page-body,
+  uni-page-head,
+  uni-tabbar {
+    width: 100%;
+    max-width: 430px;
+  }
+
+  uni-page-head,
+  uni-tabbar {
+    width: 430px !important;
+    right: auto !important;
+    left: calc((100vw - 430px) / 2) !important;
+    transform: none;
+  }
+}
+
 .page-wrap {
   min-height: 100vh;
   padding: 32rpx;

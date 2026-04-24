@@ -1,6 +1,6 @@
 {
-  "name": "uni-routealias",
-  "id": "uni-routealias",
+  "name": "quiethui-routealias",
+  "id": "quiethui-routealias",
   "displayName": "uni-app 路由别名",
   "version": "1.0.1",
   "description": "为 uni-app Vue3 + Vite 提供 pages.json 路由别名、公开路径转换与 H5 地址栏 alias 注入。",
@@ -22,12 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/quiethui/uni-routealias.git"
+    "url": "git+https://github.com/quiethui/quiethui-routealias.git"
   },
   "bugs": {
-    "url": "https://github.com/quiethui/uni-routealias/issues"
+    "url": "https://github.com/quiethui/quiethui-routealias/issues"
   },
-  "homepage": "https://github.com/quiethui/uni-routealias#readme",
+  "homepage": "https://github.com/quiethui/quiethui-routealias#readme",
   "author": "quiethui",
   "scripts": {
     "build": "tsc -p ./tsconfig.build.json && node ./scripts/postbuild.mjs",

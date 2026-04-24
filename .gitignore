@@ -9,7 +9,6 @@ lerna-debug.log*
 
 node_modules
 .DS_Store
-dist
 *.local
 
 # Editor directories and files
@@ -22,5 +21,4 @@ dist
 *.sw?
 
 # Package build artifacts
-src/uni_modules/uni-routealias/dist
-src/uni_modules/uni-routealias/*.tgz
+src/uni_modules/quiethui-routealias/dist

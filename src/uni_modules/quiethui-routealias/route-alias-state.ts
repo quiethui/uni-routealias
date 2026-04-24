@@ -153,7 +153,7 @@ function hasUnsupportedRouteSuffix(aliasPath: string) {
 }
 
 function pushWarning(warnings: string[], message: string) {
-  warnings.push(`uni-routealias: ${message}`);
+  warnings.push(`quiethui-routealias: ${message}`);
 }
 
 function collectRouteDescriptors(config: PagesJsonConfig) {

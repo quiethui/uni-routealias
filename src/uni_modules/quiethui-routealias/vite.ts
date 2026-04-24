@@ -39,7 +39,7 @@ export function createRouteAliasVitePlugin(
         routeAliasState = createRouteAliasStateFromFile(pagesJsonPath);
       } catch (error) {
         const message = error instanceof Error ? error.message : String(error);
-        this.error(`uni-routealias: failed to read "${pagesJsonPath}". ${message}`);
+        this.error(`quiethui-routealias: failed to read "${pagesJsonPath}". ${message}`);
       }
 
       routeAliasState.warnings.forEach((message) => {

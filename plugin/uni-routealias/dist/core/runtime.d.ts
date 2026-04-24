@@ -1,0 +1,10 @@
+export type { RouteAliasMap } from "./shared.js";
+export declare function tryResolveActualRoutePath(path: string): string | null;
+export declare function hasKnownRoutePath(path: string): boolean;
+export declare function resolveActualRoutePath(path: string): string;
+export declare function tryResolveActualRouteUrl(url: string): string | null;
+export declare function resolveActualRouteUrl(url: string): string;
+export declare function resolvePlatformRouteUrl(url: string): string;
+export declare function resolvePublicRouteUrl(url: string): string;
+export declare function getRoutePublicPaths(path: string): string[];
+export declare function installH5RouteAliases(): void;
